@@ -5,9 +5,10 @@ function initMap(){
     autocomplete = new google.maps.places.Autocomplete(
         document.getElementById('autocomplete'),
         {
+            
             types: ['locality'],
-            componentRestrictions: {'country': ['BR']},
-            fields: ['place_id', 'geometry', 'name']
+            componentRestrictions: {'country': ['BR']}
+         
         });
         }
 
