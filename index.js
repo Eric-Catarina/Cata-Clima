@@ -1,16 +1,22 @@
 let autocomplete;
 
 function initMap(){
-    alert('sim')
-    autocomplete = new google.maps.places.Autocomplete(
-        document.getElementById('autocomplete'),
-        {
+    
+    options = {
             
-            types: ['locality'],
-            componentRestrictions: {'country': ['BR']}
-         
-        });
-        }
+        types: ['(cities)'],
+        componentRestrictions: {country: 'br'}
+     
+    };
+
+   
+
+    autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete'),options)
+    
+    
+    }
+    
+        
 
     
 

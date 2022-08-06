@@ -1,1 +1,14 @@
 .pac-container:after{display:none !important;}
+.pac-icon {
+    width: 0;
+    background-image: none;
+  }
+
+
+.pac-item{
+   visibility: hidden;
+}
+.pac-item > .pac-item-query{
+    color: aquamarine;
+    visibility: visible;
+}  
