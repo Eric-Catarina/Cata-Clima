@@ -1,7 +1,7 @@
 let autocomplete;
-
+let geocoder
 function initMap(){
-    
+    geocoder = new google.maps.Geocoder()
     options = {
             
         types: ['(cities)'],
@@ -13,11 +13,11 @@ function initMap(){
 
     autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete'),options)
     
-    
     }
+    let trem = new AutocompleteService
     
         
 
     
 
-console.log("batata");
+console.log(trem.getPlacePredictions());
