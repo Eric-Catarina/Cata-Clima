@@ -14,11 +14,10 @@ function handler(){
     
     $.getJSON(jsonDaCidadeURL, function(jsonDaCidade){
 
-        console.log(jsonDaCidade)
-
+        
     })
     
-    
+    console.log(dadosDoLugarClicado)
 
 }
 
@@ -30,7 +29,7 @@ function initMap(){
   
     options = {
             
-        types: ['(cities)'],
+        types: [ "locality", "political" ],
         componentRestrictions: {country: 'br'}
      
     };
