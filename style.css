@@ -5,6 +5,15 @@ body{
    height: 100vh;
     
 }
+#autocomplete::placeholder{
+    color: rgb(20, 96, 184);
+    opacity: 0.5;
+
+}
+#autocomplete{
+    background-color: rgba(241, 251, 255, 0.884);
+    height: 40px;
+}
 .pac-container:after{
     display:none !important;
     
@@ -39,7 +48,7 @@ span{
 .bandeiras{
    
 }
-.iconeBrasil{
-    width: 50px;
-    height: 50px;
+.iconePais{
+    width: 25px;
+    height: 25px;
 }
