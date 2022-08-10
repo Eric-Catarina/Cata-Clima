@@ -1,0 +1,56 @@
+body{
+    background-image: url("./images/BackgroundCeuLetras.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+   height: 100vh;
+    
+}
+
+
+#autocomplete::placeholder{
+    color: rgb(20, 96, 184);
+    opacity: 0.5;
+
+}
+#autocomplete{
+    background-color: rgba(241, 251, 255, 0.884);
+    height: 40px;
+}
+.pac-container:after{
+    display:none !important;
+    
+}
+.pac-icon {
+    width: 0;
+    background-image: none;
+  }
+
+
+
+.pac-item-query{
+    
+    color: rebeccapurple;
+    
+}  
+span{
+ 
+    opacity:0.5;
+}
+.pac-item-query{
+    
+    opacity: 1;
+    
+}  
+.pac-matched{
+    opacity: 1;
+}
+.botao{
+    margin-top: 100px;
+}
+.bandeiras{
+   
+}
+.iconePais{
+    width: 25px;
+    height: 25px;
+}
