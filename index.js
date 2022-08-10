@@ -14,10 +14,10 @@ function handler(){
     
     $.getJSON(jsonDaCidadeURL, function(jsonDaCidade){
 
-        
+        console.log(jsonDaCidade)
     })
     
-    console.log(dadosDoLugarClicado)
+    
 
 }
 
