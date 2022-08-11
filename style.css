@@ -6,8 +6,8 @@ body {
 }
 
 #autocomplete::placeholder {
-  color: rgb(20, 96, 184);
-  opacity: 0.5;
+  color: rgb(106, 162, 209);
+  opacity: 0.9;
 }
 
 #autocomplete {
