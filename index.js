@@ -16,6 +16,7 @@ function handler(){
 
         console.log(jsonDaCidade)
     })
+    window.location.href = "./climaDaCidade.html";
     
     
 
