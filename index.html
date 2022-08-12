@@ -1,39 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- CSS only -->        
-    <link rel = "stylesheet" href="./style.css"/>
-    <link rel = "stylesheet" href="./custom.css"/>
 
-   
+    <!-- CSS only -->
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./custom.css" />
+
+
     <!--6f0938ac962003085f29f2dd5cefc18d-->
     <!-- ^^Weather API_Key-->
 
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="http://fonts.cdnfonts.com/css/montserrat?styles=17402,17403" rel="stylesheet">
+
 </head>
-<body >
-    
+
+<body>
+
     <div class="total">
-   <div class = "col-6 containerCentral text-center position-absolute top-45 start-50 translate-middle">
-    <p class="fw-bold font-monospace text-light tempoHojeTitulo text-center text-nowrap mb-1">Como está o tempo hoje?</p>
-    <input id="autocomplete" class="form-control text-info"  placeholder="Digite o nome da cidade" type="text" />
-</div>
-<div class="bandeiras text-center mb-1 position-absolute bottom-0 start-50 translate-middle-x">
-    
-    <a class="mx-1" href="./climaCidade.html"> <img class="iconePais"  src="./images/brasilIcon.png" alt="brasil"></a>
-    <a class="mx-1" href="./climaCidade.html"> <img class="iconePais"  src="./images/euaIcon.png" alt="brasil"></a>
-    <a class="mx-1" href="./climaCidade.html"> <img class="iconePais"  src="./images/espanhaIcon.png" alt="brasil"></a>
-   <p class="text-light">Idioma Selecionado: Português</p>
-</div>
+        <div class="toggle"></div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                
+                        <label class="switch ">
+  <input type="checkbox" class="default">
+  <span class="slider round"></span>
+</label>
+            </li>
+            </ul>
+        <div class="col-6 containerCentral text-center position-absolute top-45 start-50 translate-middle">
+            <p class=" text-light tempoHojeTitulo text-center text-nowrap mb-1">Como está o tempo hoje?</p>
+            <input id="autocomplete" class="form-control text-info" placeholder="Digite o nome da cidade" type="text" />
+        </div>
+        <div class="bandeiras text-center mb-1 position-absolute bottom-0 start-50 translate-middle-x">
+
+            <a class="mx-1" href="./climaCidade.html"> <img class="iconePais" src="./images/brasilIcon.png"
+                    alt="brasil"></a>
+            <a class="mx-1" href="./climaCidade.html"> <img class="iconePais" src="./images/euaIcon.png"
+                    alt="brasil"></a>
+            <a class="mx-1" href="./climaCidade.html"> <img class="iconePais" src="./images/espanhaIcon.png"
+                    alt="brasil"></a>
+            <p class="text-light">Idioma Selecionado: Português</p>
+        </div>
 
 
-   
-</div>
+
+    </div>
 
 
 
@@ -41,8 +58,8 @@
     <script src="./index.js"></script>
 
     <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1ewLwd-tYecZppynYd_a-R1dwirjC7-c&language=pt-BR&libraries=places&callback=initMap">
-</script>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1ewLwd-tYecZppynYd_a-R1dwirjC7-c&language=pt-BR&libraries=places&callback=initMap">
+        </script>
 
 </body>
 

@@ -1,60 +1,174 @@
 
-body{
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  float:right;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input.default:checked + .slider {
+  background-color: #444;
+}
+input.primary:checked + .slider {
+  background-color: #2196F3;
+}
+input.success:checked + .slider {
+  background-color: #8bc34a;
+}
+input.info:checked + .slider {
+  background-color: #3de0f5;
+}
+input.warning:checked + .slider {
+  background-color: #FFC107;
+}
+input.danger:checked + .slider {
+  background-color: #f44336;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+body {
     background-image: url("./images/BackgroundCeuLetras.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
-   height: 100vh;
-    
-}
-
-$corAzul : rgb(21, 255, 0);
-
-#autocomplete::placeholder{
+    height: 100vh;
+  }
+  
+  * {
+    box-shadow: 0;
+  
+    font-family: 'Montserrat';
+  
+  }
+  
+  #autocomplete::placeholder {
     color: rgb(20, 96, 184);
     opacity: 0.5;
-
-}
-#autocomplete{
+  }
+  
+  #autocomplete {
     background-color: rgba(241, 251, 255, 0.8);
-    height: 40px;
-}
-.pac-container:after{
-    display:none !important;
-    
-}
-.pac-icon {
+    height: 3.5vw;
+    border-bottom: 1px solid rgba(210, 179, 193, 0.9);
+    font-size: 1.5vw;
+  
+  }
+  
+  .pac-container:after {
+    display: none !important;
+  }
+  
+  .pac-icon {
     width: 0;
     background-image: none;
   }
-  .pac-container{
-    background-color:rgba(241, 251, 255, 0.8);
+  
+  .pac-item {
+    border-top: 0;
+    padding: 0.5rem 0.78rem;
   }
-
-
-.pac-item-query{
-    
-    color: rebeccapurple;
-    
-}  
-span{
- 
-    opacity:0.5;
-}
-.pac-item-query{
-    
+  
+  .pac-item:hover {
+    background-color: rgba(241, 251, 255, 0.4);
+  
+  }
+  
+  .pac-item:hover>.pac-item-query {
+    color: rgba(182, 136, 176, 0.685);
+  
+  }
+  
+  .pac-container {
+    background-color: rgba(241, 251, 255, 0.8);
+    border-radius: 0.8rem;
+    border-top: 0;
+    margin-bottom: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: 0 0px 0px rgb(0 0 0 / 30%);
+    text-align: center !important;
+  
+  }
+  
+  .pac-item-query {
+    color: rgba(106, 162, 209, 0.8);
+    font-size: 1.6rem;
+  }
+  
+  span {
+    opacity: 0.25;
+  }
+  
+  .pac-item-query {
     opacity: 1;
-    
-}  
-.pac-matched{
+  }
+  
+  .pac-matched {
+    font-weight: normal;
     opacity: 1;
-}
-.botao{
+  }
+  
+  .botao {
     margin-top: 100px;
-}
-.bandeiras{
-   
-}
-.iconePais{
+  }
+  
+  .iconePais {
     width: 25px;
     height: 25px;
-}
+  }
+  
+  .tempoHojeTitulo {
+    font-size: 3.6vw;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif, monospace;
+    
+  }
+  
+  
+  /*# sourceMappingURL=style.css.map */
