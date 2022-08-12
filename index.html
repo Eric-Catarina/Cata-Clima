@@ -23,16 +23,25 @@
 <body>
 
     <div class="total">
-        <div class="toggle"></div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-                
-                        <label class="switch ">
-  <input type="checkbox" class="default">
-  <span class="slider round"></span>
-</label>
-            </li>
-            </ul>
+        <div class=" navbar toggle position-absolute top-5 end-5 ">
+            <div class="F me-1">
+                °F
+            </div>
+            <div class="botaoSwitch">
+                <label class="switch">
+
+                    <input type="checkbox" class="default">
+
+                    <span class="slider round"></span>
+
+                </label>
+            </div>
+            <div class="C text-nowrap">
+                °C
+            </div>
+
+        </div>
+
         <div class="col-6 containerCentral text-center position-absolute top-45 start-50 translate-middle">
             <p class=" text-light tempoHojeTitulo text-center text-nowrap mb-1">Como está o tempo hoje?</p>
             <input id="autocomplete" class="form-control text-info" placeholder="Digite o nome da cidade" type="text" />
