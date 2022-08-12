@@ -7,6 +7,11 @@ let jsonDaCidadeURL
 let nomeDaCidade
 
 function handler(){
+    var elementoAutoComplete = document.getElementById("autocomplete");
+    elementoAutoComplete.classList.add("d-none")
+    var elementoSeta = document.getElementById("seta");
+    
+    elementoSeta.classList.toggle("d-none")
     dadosDoLugarClicado = autocomplete.getPlace()
     nomeDaCidade = dadosDoLugarClicado.address_components[0].long_name
     
@@ -16,9 +21,15 @@ function handler(){
 
         console.log(jsonDaCidade)
     })
-    window.location.href = "./climaDaCidade.html";
     
-    
+
+}
+
+function Seta(){
+    var elementoAutoComplete = document.getElementById("autocomplete");
+    var elementoSeta = document.getElementById("seta");
+    elementoSeta.classList.toggle("d-none")
+    elementoAutoComplete.classList.toggle("d-none");  
 
 }
 

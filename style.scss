@@ -111,11 +111,22 @@ color: $corTituloBranco;
     color: $corSeta;
   }
   
-  .container{
-    width: 70vh;
-    border: 2px solid $corTituloBranco;
+  .nuvens{
+    color: $corSeta;
+    font-size: 1.8rem;
   }
-  
+  .textoBranco{
+    color: $corSeta;
+  }
+  .tempIcone{
+    font-size: 5rem;
+  }
+  .maxMin{
+    font-size: 2rem;
+  }
+  .maxMinLabel{
+    font-weight: 800;
+  }
   
   
   

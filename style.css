@@ -111,9 +111,25 @@ a {
   color: rgb(241, 251, 255);
 }
 
-.container {
-  width: 70vh;
-  border: 2px solid rgba(241, 251, 255, 0.8);
+.nuvens {
+  color: rgb(241, 251, 255);
+  font-size: 1.8rem;
+}
+
+.textoBranco {
+  color: rgb(241, 251, 255);
+}
+
+.tempIcone {
+  font-size: 5rem;
+}
+
+.maxMin {
+  font-size: 2rem;
+}
+
+.maxMinLabel {
+  font-weight: 800;
 }
 
 /*# sourceMappingURL=style.css.map */
