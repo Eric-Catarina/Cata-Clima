@@ -23,7 +23,8 @@
 <body>
 
     <div class="total container">
-        <div class="seta position-absolute top-4 start-5  text-center"> <a href="./index.html"><i class="bi bi-arrow-left "></i></a> </div>
+        <div class="alternavel d-none seta position-absolute top-4 start-5  text-center" onclick="AlternaPaginas()"> <a
+                href="#"><i class="bi bi-arrow-left "></i></a> </div>
 
         <div class=" navbar toggle position-absolute top-5 end-5 ">
             <div class="F me-1">
@@ -32,7 +33,7 @@
             <div class="botaoSwitch">
                 <label class="switch">
 
-                    <input type="checkbox" class="default">
+                    <input onclick="TrocaTipoTemperatura()" type="checkbox" class="default">
 
                     <span class="slider round"></span>
 
@@ -45,9 +46,22 @@
         </div>
 
         <div class="col-6 containerCentral text-center position-absolute top-45 start-50 translate-middle">
-            <div class="containerCentralAutocomplete">
-                <p class=" text-light tempoHojeTitulo text-center text-nowrap mb-1">Como está o tempo hoje?</p>
-                <input id="autocomplete" class="form-control text-info" placeholder="Digite o nome da cidade"
+            <div id="containerCentralClima alternavel">
+                <p class="alternavel text-light tempoHojeTitulo text-center text-nowrap mb-1">Como está o tempo hoje?
+                </p>
+
+                <p id="nomeCidade"
+                    class="alternavel d-none text-light tempoHojeTitulo text-center text-nowrap mb-1 text-uppercase">
+                    nome da cidade</p>
+                <p id="estadoNuvens" class="alternavel d-none nuvens">estado das nuvens</p>
+                <p id="temperatura" class="alternavel d-none tempIcone textoBranco"> 99° + ìcone</p>
+                <p class="alternavel d-none textoBranco maxMin"><label
+                        class="alternavel d-none maxMinLabel">MAX: <label id="max"></label></label>
+                    
+                    <label class="alternavel d-none maxMinLabel">MIN: <label id="min"></label>
+                    </label>
+                </p>
+                <input id="autocomplete" class="form-control alternavel text-info" placeholder="Digite o nome da cidade"
                     type="text" />
             </div>
         </div>
