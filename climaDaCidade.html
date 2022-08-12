@@ -23,7 +23,8 @@
 <body>
 
     <div class="total container">
-        <div id="seta" class="d-none seta position-absolute top-4 start-5  text-center" onclick="Seta()"> <a href="#"><i class="bi bi-arrow-left "></i></a> </div>
+        <div id="seta" class="d-none seta position-absolute top-4 start-5  text-center" onclick="AlternaPaginas()"> <a
+                href="#"><i class="bi bi-arrow-left "></i></a> </div>
 
         <div class=" navbar toggle position-absolute top-5 end-5 ">
             <div class="F me-1">
@@ -45,11 +46,12 @@
         </div>
 
         <div class="col-6 containerCentral text-center position-absolute top-45 start-50 translate-middle">
-            <div class="containerCentralClima">
-                <p class=" text-light tempoHojeTitulo text-center text-nowrap mb-1 text-uppercase">nome da cidade</p>
-                <p class="nuvens">estado das nuvens</p>
-                <p class="tempIcone textoBranco"> 99° + ìcone</p>
-                <p class="textoBranco maxMin"><label class="maxMinLabel">MAX: </label>   <label class="maxMinLabel">MIN: </label></p>
+            <div id="containerCentralClima alternavel">
+                <p class="alternavel text-light tempoHojeTitulo text-center text-nowrap mb-1 text-uppercase">nome da cidade</p>
+                <p class="alternavel nuvens">estado das nuvens</p>
+                <p class="alternavel tempIcone textoBranco"> 99° + ìcone</p>
+                <p class="alternavel textoBranco maxMin"><label class="alternavel maxMinLabel">MAX: </label> <label class="alternavel maxMinLabel">MIN:
+                    </label></p>
                 <input id="autocomplete" class="form-control text-info" placeholder="Digite o nome da cidade"
                     type="text" />
             </div>

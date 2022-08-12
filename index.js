@@ -6,12 +6,32 @@ let dadosDoLugarClicado
 let jsonDaCidadeURL
 let nomeDaCidade
 
-function handler(){
-    var elementoAutoComplete = document.getElementById("autocomplete");
-    elementoAutoComplete.classList.add("d-none")
+function ToggleSeta(){
     var elementoSeta = document.getElementById("seta");
-    
     elementoSeta.classList.toggle("d-none")
+}
+function ToggleAutoComplete(){
+    var elementoAutoComplete = document.getElementById("autocomplete");
+    elementoAutoComplete.classList.toggle("d-none");  
+}
+function ToggleContainerCentralClima(){
+    var elementosAlternaveis = document.getElementsByClassName("alternavel")
+    
+    for (const elementoAtual of elementosAlternaveis){
+        elementoAtual.classList.toggle("d-none")
+    }
+
+}
+function AlternaPaginas(){
+    ToggleAutoComplete()
+    ToggleSeta()
+    ToggleContainerCentralClima()
+
+}
+
+function handler(){
+    AlternaPaginas()
+
     dadosDoLugarClicado = autocomplete.getPlace()
     nomeDaCidade = dadosDoLugarClicado.address_components[0].long_name
     
@@ -25,13 +45,7 @@ function handler(){
 
 }
 
-function Seta(){
-    var elementoAutoComplete = document.getElementById("autocomplete");
-    var elementoSeta = document.getElementById("seta");
-    elementoSeta.classList.toggle("d-none")
-    elementoAutoComplete.classList.toggle("d-none");  
 
-}
 
 function RecebeStringDoInputAutocomplete(){
     nomeDoLugar = input.value
