@@ -1986,7 +1986,7 @@ progress {
 .form-control {
   display: block;
   width: 100%;
-  padding: 0.375rem 0.75rem;
+  padding: 0rem 1.1rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -1995,7 +1995,7 @@ progress {
   background-clip: padding-box;
   border: 0px solid #ced4da;
   appearance: none;
-  border-radius: 0.375rem;
+  border-radius: 0.8rem;
   
 }
 @media (prefers-reduced-motion: reduce) {
@@ -7019,7 +7019,9 @@ textarea.form-control-lg {
 .top-50 {
   top: 50% !important;
 }
-
+.top-45 {
+  top: 45% !important;
+}
 .top-100 {
   top: 100% !important;
 }
