@@ -14,20 +14,14 @@ function ToggleAutoComplete(){
     var elementoAutoComplete = document.getElementById("autocomplete");
     elementoAutoComplete.classList.toggle("d-none");  
 }
-function ToggleContainerCentralClima(){
+function AlternaPaginas(){
     var elementosAlternaveis = document.getElementsByClassName("alternavel")
     
     for (const elementoAtual of elementosAlternaveis){
         elementoAtual.classList.toggle("d-none")
     }
-
 }
-function AlternaPaginas(){
-    ToggleAutoComplete()
-    ToggleSeta()
-    ToggleContainerCentralClima()
 
-}
 
 function handler(){
     AlternaPaginas()
