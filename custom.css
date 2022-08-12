@@ -1986,7 +1986,7 @@ progress {
 .form-control {
   display: block;
   width: 100%;
-  padding: 0rem 0rem;
+  padding: 0.375rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -2011,7 +2011,7 @@ progress {
 }
 .form-control:focus {
   color: #212529;
-  background-color: #fff;
+  background-color: rgba(241, 251, 255, 0.8);
   border-color:transparent;
   outline: 0;
   border-bottom-left-radius: 0;
@@ -2494,6 +2494,7 @@ textarea.form-control-lg {
   background-color: #e9ecef;
   border: 1px solid #ced4da;
   border-radius: 0.375rem;
+  text-indent: 20px !important;
 }
 
 .input-group-lg > .form-control,
