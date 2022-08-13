@@ -1,16 +1,78 @@
-
 let autocomplete;
 let nomeDoLugar;
 let input = document.getElementById('autocomplete')
 let dadosDoLugarClicado
 let jsonDaCidadeURL
-let nomeDaCidade
+let nomeDaCidade = sessionStorage.getItem("sessionNomeDaCidade");
 let tipoDaTemperatura = "metric"
 let tipoDaTemperaturaCont = 0
 let jsonDaCidadeGlobal
 let jsonDaCidade
+let idPaginaAtual = 1
+
+jsonDaCidadeForecastURL = (`https://api.openweathermap.org/data/2.5/forecast?q=${nomeDaCidade}&units=${tipoDaTemperatura}&appid=6f0938ac962003085f29f2dd5cefc18d&lang=pt_br`)
+$.getJSON(jsonDaCidadeForecastURL, function(jsonDaCidade){
+       
+    console.log(jsonDaCidade)
+    
+})
+InsereNomeDaCidade()
+
+function myDate() {
+    var dataAtual = new Date();
+    var weekdays = new Array(7);
+    weekdays[0] = "Dom";
+    weekdays[1] = "Seg";
+    weekdays[2] = "Ter";
+    weekdays[3] = "Qua";
+    weekdays[4] = "Qui";
+    weekdays[5] = "Sex";
+    weekdays[6] = "Sab";
+
+    let months = new Array(12);
+    months[0] = "Jan";
+    months[1] = "Fev";
+    months[2] = "Mar";
+    months[3] = "Abr";
+    months[4] = "Mai";
+    months[5] = "Jun";
+    months[6] = "Jul";
+    months[7] = "Ago";
+    months[8] = "Set";
+    months[9] = "Out";
+    months[10] = "Nov";
+    months[11] = "Dez";
+
+    let mesAtual = months[dataAtual.getMonth()]
+    var diaDaSemana = weekdays[dataAtual.getDay()];
+    let diaDoMes = dataAtual.getDate()
+
+    let diaDaSemanaEDiaDoMes = diaDaSemana + "," + " " + diaDoMes + " " + mesAtual;
+    console.log(diaDaSemanaEDiaDoMes)
+
+    let proximosCincoDias = []
+    for(let indiceDiaAtual = diaDoMes + 1; indiceDiaAtual<indiceDiaAtual+6; indiceDiaAtual++){
+        proximosCincoDias.push(indiceDiaAtual)
+    }
+}
+myDate()
+function InserePrevisaoCincoDias(){
+    
+    sessionStorage.setItem("sessionNomeDaCidade",nomeDaCidade);
+    window.location = ("./previsao5dias.html")
+
+    
+
+    
+   
+
+
+
+}
+
 
 function ToggleSeta(){
+   
     var elementoSeta = document.getElementById("seta");
     elementoSeta.classList.toggle("d-none")
 }
@@ -18,12 +80,17 @@ function ToggleAutoComplete(){
     var elementoAutoComplete = document.getElementById("autocomplete");
     elementoAutoComplete.classList.toggle("d-none");  
 }
+
+
 function AlternaPaginas(){
+
     var elementosAlternaveis = document.getElementsByClassName("alternavel")
 
     for (const elementoAtual of elementosAlternaveis){
         elementoAtual.classList.toggle("d-none")
     }
+
+    idPaginaAtual++
 }
 function InsereNomeDaCidade(){
     document.getElementById("nomeCidade").innerHTML = nomeDaCidade
@@ -37,6 +104,7 @@ function InsereTemperaturas(jsonDaCidade){
     jsonDaCidade = jsonDaCidade.main
     let temperatura =  jsonDaCidade.temp
     let temperaturaArredondada = Math.round(temperatura)
+
     document.getElementById("imagemIcone").src= `http://openweathermap.org/img/wn/${iconeID}@2x.png`
     elementoDoIcone = document.getElementById("imagemIcone")
     document.getElementById("temperatura").innerHTML = temperaturaArredondada + "°"  
@@ -50,10 +118,10 @@ function InsereTemperaturas(jsonDaCidade){
     let temperaturaMaxima = (jsonDaCidade.temp_max) + 1
     let temperaturaMaximaArredondada = Math.round(temperaturaMaxima)
     document.getElementById("max").innerHTML = temperaturaMaximaArredondada + "°"
+}
+
 
     
-    console.log(iconeID)
-}
 
 function TrocaTipoTemperatura(){
     

@@ -132,27 +132,23 @@ a {
   font-weight: 800;
 }
 
-#max, #min{
+#max, #min {
   font-weight: 100;
 }
 
+.linkPrevisao:hover {
+  cursor: pointer;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.degrade {
+  width: 100px;
+  height: 5px;
+  margin-top: 0.6rem !important;
+  border-radius: 0.3rem;
+  background: #C6FFDD; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
 /*# sourceMappingURL=style.css.map */
 /*# sourceMappingURL=style.css.map */
@@ -200,30 +196,6 @@ input.default:checked + .slider {
   background-color: rgb(210, 179, 193);
 }
 
-input.primary:checked + .slider {
-  background-color: #2196F3;
-}
-
-input.success:checked + .slider {
-  background-color: #8bc34a;
-}
-
-input.info:checked + .slider {
-  background-color: #3de0f5;
-}
-
-input.warning:checked + .slider {
-  background-color: #FFC107;
-}
-
-input.danger:checked + .slider {
-  background-color: #f44336;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
@@ -238,16 +210,21 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-#temperatura{
+
+#temperatura {
   opacity: 1;
 }
-#imagemIcone{
+
+#imagemIcone {
   width: 100px;
   height: 100px;
 }
-.temperaturaEIcone{
+
+.temperaturaEIcone {
   font-size: 4rem;
 }
+
+/*# sourceMappingURL=style.css.map */
 /*# sourceMappingURL=style.css.map */
 
 /*# sourceMappingURL=style.css.map */

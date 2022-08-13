@@ -34,7 +34,8 @@
             <div class="botaoSwitch">
                 <label id="labelSwitchTemperatura" class="switch">
 
-                    <input id="inputTemperatura" onclick="TrocaTipoTemperatura()" type="checkbox" class="default" checked>
+                    <input id="inputTemperatura" onclick="TrocaTipoTemperatura()" type="checkbox" class="default"
+                        checked>
 
                     <span class="slider round"></span>
 
@@ -48,28 +49,49 @@
 
         <div class="col-6 containerCentral text-center position-absolute top-45 start-50 translate-middle">
             <div id="containerCentralClima alternavel">
-                <p class="alternavel text-light tempoHojeTitulo text-center text-nowrap mb-1">Como está o tempo hoje?
-                </p>
+
+
+                <input id="autocomplete" class="d-none form-control alternavel text-info"
+                    placeholder="Digite o nome da cidade" type="text" />
 
                 <p id="nomeCidade"
-                    class="alternavel d-none text-light tempoHojeTitulo text-center text-nowrap mb-1 text-uppercase">
+                    class="alternavel  text-light tempoHojeTitulo text-center text-nowrap mb-1 text-uppercase">
                     nome da cidade</p>
-                <p id="estadoNuvens" class="alternavel d-none nuvens text-capitalize">estado das nuvens</p>
-                <span >
-                    <span id="temperatura" class="alternavel d-none temperaturaEIcone opacity-100  textoBranco"> 99° <img id="imagemIcone" class="temperaturaEIcone opacity-100 alternavel d-none" src="http://openweathermap.org/img/wn/02n.png" alt="Icon"> </span>
+                <p class="text-light fs-2"> Previsão para 5 dias</p>
 
-                </span>
+                <div id="div5Dias">
+                    <ul class="list-group list-group-flush ">
+                        <li class="list-group-item  text-light ">
+                            <label class="list-group list-group-horizontal justify-content-center">
+                                <label class="list-item">Dia + </label >
+                                <label class="list-item">Icone + </label >
+                                <label class="list-item">tempMin + </label >
+                                <label class="list-item  col-4">
+                                    <div class=" degrade  col-12"> </div>
+                                </label class="list-item">
+                                <label class="list-item">tempMax + </label >
+                                <label class="list-item">estadoNuvens + </label>
+                            </label>
+                        </li>
+                        <li class="list-group-item text-light">
+                            <label>Dia + Icone + tempMin + <div class="degrade"> </div> + tempMax + estadoNuvens</label>
+                        </li>
+                        <li class="list-group-item text-light">
+                            <label>Dia + Icone + tempMin + <div class="degrade"> </div> + tempMax + estadoNuvens</label>
+                        </li>
+                        <li class="list-group-item text-light">
+                            <label>Dia + Icone + tempMin + <div class="degrade"> </div> + tempMax + estadoNuvens</label>
+                        </li>
+                        <li class="list-group-item text-light">
+                            <label>Dia + Icone + tempMin + <div class="degrade"> </div> + tempMax + estadoNuvens</label>
+                        </li>
+                    </ul>
+                </div>
 
-               
-                <p class="alternavel d-none textoBranco maxMin"><label
-                        class="alternavel d-none maxMinLabel">MAX: <label id="max"></label></label>
-                    
-                    <label class="alternavel d-none maxMinLabel">MIN: <label id="min"></label>
-                    </label>
-                </p>
-                <p class="alternavel d-none textoBranco link text-decoration-underline linkPrevisao" onclick="InserePrevisaoCincoDias()">Ver a previsão para os próximos 5 dias</p>
-                <input id="autocomplete" class="form-control alternavel text-info" placeholder="Digite o nome da cidade"
-                    type="text" />
+
+
+
+
             </div>
         </div>
         <div class="bandeiras text-center mb-1 position-absolute bottom-0 start-50 translate-middle-x">
