@@ -28,6 +28,12 @@ function myDate() {
     weekdays[4] = "Qui";
     weekdays[5] = "Sex";
     weekdays[6] = "Sab";
+    weekdays[7] = "Dom";
+    weekdays[8] = "Seg";
+    weekdays[9] = "Ter";
+    weekdays[10] = "Qua";
+    weekdays[11] = "Qui";
+    weekdays[12] = "Sex";
 
     let months = new Array(12);
     months[0] = "Jan";
@@ -46,14 +52,14 @@ function myDate() {
     let diaDoMesAtual = dataAtual.getDate()
     let numeroMesAtual = dataAtual.getMonth()
     
-    parseInt(diaDoMesAtual,10)
 
     let diaDaSemanaAtualNumero = dataAtual.getDay()
     
     let mesAtual = months[numeroMesAtual]
 
     for (let indiceDosProximosDias = 1; indiceDosProximosDias < 6; indiceDosProximosDias++){
-        document.getElementById(`dia${indiceDosProximosDias}`).innerHTML = weekdays[6] + "," + " " + (diaDoMesAtual + indiceDosProximosDias) + " " + mesAtual
+        
+        document.getElementById(`dia${indiceDosProximosDias}`).innerHTML = weekdays[(diaDaSemanaAtualNumero+indiceDosProximosDias)] + "," + " " + (diaDoMesAtual + indiceDosProximosDias) + " " + mesAtual
         
 
     }
