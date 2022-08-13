@@ -150,109 +150,12 @@ background: -webkit-linear-gradient(to left, #f7797d, #FBD786, #C6FFDD);  /* Chr
 background: linear-gradient(to left, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-
 img{
   width: 60px;
   height: 60px;
 }
 
-
-
-
-
-
-
-
-
-
-@media only screen and (max-width: 580px) {
-  .tempoHojeTitulo{
-    font-size: 2rem;
-    white-space: normal !important;
-  }
-  .nomeCidade{
-    font-size: 2rem;
-  }
-
-  .linkPrevisao{
-    font-size: 1.2rem;
-  }
-  
-  #dia1{
-    font-size: 1rem;
-  }
-  #dia2{
-    font-size: 1rem;
-  }
-  #dia3{
-    font-size: 1rem;
-  }
-  #dia4{
-    font-size: 1rem;
-  }
-  #dia5{
-    font-size: 1rem;
-  }
-
-
-  #icone1{
-    width: 30px;
-    height: 30px;
-  }
-  #icone2{
-    width: 30px;
-    height: 30px;
-  }
-
-  #icone3{
-    width: 30px;
-    height: 30px;
-  }
-  #icone4{
-    width: 30px;
-    height: 30px;
-  }
-  #icone5{
-    width: 30px;
-    height: 30px;
-  }
-  #estadoNuvens1{
-    display: none !important;
-  }
-  #estadoNuvens2{
-    display: none !important;
-  }
-  #estadoNuvens3{
-    display: none !important;
-  }
-  #estadoNuvens4{
-    display: none !important;
-  }
-  #estadoNuvens5{
-    display: none !important;
-  }
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*# sourceMappingURL=style.css.map */
-/*# sourceMappingURL=style.css.map */
-/* The switch - the box around the slider */
+/* Switch da Temperatura*/
 .switch {
   position: relative;
   display: inline-block;
@@ -261,12 +164,12 @@ img{
   float: right;
 }
 
-/* Hide default HTML checkbox */
+/* Esconder o input Default da checkbox HTML */
 .switch input {
   display: none;
 }
 
-/* The slider */
+/* O Slider */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -302,7 +205,7 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* Rounded sliders */
+/* Slider com bordas arredondadas */
 .slider.round {
   border-radius: 34px;
 }
@@ -324,7 +227,31 @@ input:checked + .slider:before {
   font-size: 4rem;
 }
 
-/*# sourceMappingURL=style.css.map */
-/*# sourceMappingURL=style.css.map */
+@media only screen and (max-width: 580px) {
+  .tempoHojeTitulo{
+    font-size: 2rem;
+    white-space: normal !important;
+  }
+  .nomeCidade{
+    font-size: 2rem;
+  }
 
-/*# sourceMappingURL=style.css.map */
+  .linkPrevisao{
+    font-size: 1.2rem;
+  }
+  
+  #dia1,#dia2,#dia3,#dia4,#dia5{
+    font-size: 1rem;
+  }
+  
+
+  #icone1, #icone2, #icone3, #icone4, #icone5{
+    width: 30px;
+    height: 30px;
+  }
+ 
+  #estadoNuvens1, #estadoNuvens2, #estadoNuvens3, #estadoNuvens4, #estadoNuvens5{
+    display: none !important;
+  }
+ 
+}
