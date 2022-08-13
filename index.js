@@ -15,6 +15,7 @@ $.getJSON(jsonDaCidadeForecastURL, function (jsonDaCidade) {
 
     InsereIconeCincoDias(jsonDaCidade)
     InsereNuvensCincoDias(jsonDaCidade)
+    InsereMaxEMinCincoDias(jsonDaCidade)
 
 
 })
@@ -82,20 +83,28 @@ function InsereNuvensCincoDias(jsonDaCidade) {
     }
 
 }
+function InsereMaxEMinCincoDias(jsonDaCidade){
+    for (let indiceDosProximosDias = 1; indiceDosProximosDias < 6; indiceDosProximosDias++) {
+        tempMinAtual = (jsonDaCidade.list[indiceDosProximosDias*7].main.temp_min)
+        tempMaxAtual = (jsonDaCidade.list[indiceDosProximosDias*7].main.temp_max)
+
+        tempMinAtualArrendondada = Math.round(tempMinAtual)
+        tempMaxAtualArrendondada = Math.round(tempMaxAtual)
+
+        document.getElementById(`tempMin${indiceDosProximosDias}`).innerHTML = tempMinAtualArrendondada + "°"
+        document.getElementById(`tempMax${indiceDosProximosDias}`).innerHTML = tempMaxAtualArrendondada + "°"
+
+
+
+    }
+}
+
 
 
 function InserePrevisaoCincoDias() {
 
     sessionStorage.setItem("sessionNomeDaCidade", nomeDaCidade);
     window.location = ("./previsao5dias.html")
-
-
-
-
-
-
-
-
 
 }
 
