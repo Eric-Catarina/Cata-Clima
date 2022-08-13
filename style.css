@@ -61,7 +61,7 @@ body {
 }
 
 span {
-  opacity: 0.25;
+  opacity: 1;
 }
 
 .pac-item-query {
@@ -216,7 +216,16 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-
+#temperatura{
+  opacity: 1;
+}
+#imagemIcone{
+  width: 100px;
+  height: 100px;
+}
+.temperaturaEIcone{
+  font-size: 4rem;
+}
 /*# sourceMappingURL=style.css.map */
 
 /*# sourceMappingURL=style.css.map */

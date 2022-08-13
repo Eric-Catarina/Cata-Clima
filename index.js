@@ -29,10 +29,18 @@ function InsereNomeDaCidade(){
     document.getElementById("nomeCidade").innerHTML = nomeDaCidade
 }
 function InsereTemperaturas(jsonDaCidade){
+    iconeID = jsonDaCidade.weather[0].icon
+    
+    let estadoDasNuvens = document.getElementById("estadoNuvens")
+    estadoDasNuvens.innerHTML = jsonDaCidade.weather[0].description
+
     jsonDaCidade = jsonDaCidade.main
     let temperatura =  jsonDaCidade.temp
     let temperaturaArredondada = Math.round(temperatura)
-    document.getElementById("temperatura").innerHTML = temperaturaArredondada + "°"
+    elementoDoIcone = document.getElementById("imagemIcone")
+    document.getElementById("temperatura").innerHTML = temperaturaArredondada + "°"  
+    document.getElementById("temperatura").appendChild(elementoDoIcone)
+
 
     let temperaturaMinima = (jsonDaCidade.temp_min) - 1
     let temperaturaMinimaArredondada = Math.round(temperaturaMinima)
@@ -42,6 +50,7 @@ function InsereTemperaturas(jsonDaCidade){
     let temperaturaMaximaArredondada = Math.round(temperaturaMaxima)
     document.getElementById("max").innerHTML = temperaturaMaximaArredondada + "°"
 
+    
 
 }
 
@@ -55,13 +64,15 @@ function TrocaTipoTemperatura(){
     else{
         tipoDaTemperatura = "imperial"
     }
-    jsonDaCidadeURL = (`https://api.openweathermap.org/data/2.5/weather?q=${nomeDaCidade}&units=${tipoDaTemperatura}&appid=6f0938ac962003085f29f2dd5cefc18d`)
+    jsonDaCidadeURL = (`https://api.openweathermap.org/data/2.5/weather?q=${nomeDaCidade}&units=${tipoDaTemperatura}&appid=6f0938ac962003085f29f2dd5cefc18d&lang=pt_br`)
     
     $.getJSON(jsonDaCidadeURL, function(jsonDaCidade){
         InsereTemperaturas(jsonDaCidade)
     })
     
 }
+
+
 
 function handler(){
     AlternaPaginas()
@@ -70,7 +81,7 @@ function handler(){
     nomeDaCidade = dadosDoLugarClicado.address_components[0].long_name
     InsereNomeDaCidade()
     
-    jsonDaCidadeURL = (`https://api.openweathermap.org/data/2.5/weather?q=${nomeDaCidade}&units=${tipoDaTemperatura}&appid=6f0938ac962003085f29f2dd5cefc18d`)
+    jsonDaCidadeURL = (`https://api.openweathermap.org/data/2.5/weather?q=${nomeDaCidade}&units=${tipoDaTemperatura}&appid=6f0938ac962003085f29f2dd5cefc18d&lang=pt_br`)
     
     $.getJSON(jsonDaCidadeURL, function(jsonDaCidade){
         jsonDaCidadeGlobal = jsonDaCidade.main
