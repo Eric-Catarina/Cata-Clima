@@ -13,12 +13,14 @@ let idPaginaAtual = 1
 jsonDaCidadeForecastURL = (`https://api.openweathermap.org/data/2.5/forecast?q=${nomeDaCidade}&units=${tipoDaTemperatura}&appid=6f0938ac962003085f29f2dd5cefc18d&lang=pt_br`)
 $.getJSON(jsonDaCidadeForecastURL, function(jsonDaCidade){
        
-    console.log(jsonDaCidade)
+    InsereIconeCincoDias(jsonDaCidade)
+
+
     
 })
 InsereNomeDaCidade()
 
-function myDate() {
+function InsereDataCincoDias() {
     var dataAtual = new Date();
     var weekdays = new Array(7);
     weekdays[0] = "Dom";
@@ -61,17 +63,26 @@ function myDate() {
         
         document.getElementById(`dia${indiceDosProximosDias}`).innerHTML = weekdays[(diaDaSemanaAtualNumero+indiceDosProximosDias)] + "," + " " + (diaDoMesAtual + indiceDosProximosDias) + " " + mesAtual
         
-
     }
-    
-   
+}
+InsereDataCincoDias()
+
+function InsereIconeCincoDias(jsonDaCidade){
+    for (let indiceDosProximosDias =1 ;indiceDosProximosDias <6; indiceDosProximosDias++){
+        idIconeAtual = jsonDaCidade.list[indiceDosProximosDias*7].weather[0].icon
+        document.getElementById(`icone${indiceDosProximosDias}`).src = `http://openweathermap.org/img/wn/${idIconeAtual}@2x.png`
+        console.log(jsonDaCidade.list[indiceDosProximosDias*7].weather[0].icon)
+    }
+
 
 }
-myDate()
+
+
 function InserePrevisaoCincoDias(){
     
     sessionStorage.setItem("sessionNomeDaCidade",nomeDaCidade);
     window.location = ("./previsao5dias.html")
+
 
     
 
