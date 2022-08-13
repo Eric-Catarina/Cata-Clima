@@ -158,6 +158,13 @@ img{
 
 
 
+
+
+
+
+
+
+
 @media only screen and (max-width: 580px) {
   .tempoHojeTitulo{
     font-size: 2rem;
@@ -170,6 +177,64 @@ img{
   .linkPrevisao{
     font-size: 1.2rem;
   }
+  
+  #dia1{
+    font-size: 1rem;
+  }
+  #dia2{
+    font-size: 1rem;
+  }
+  #dia3{
+    font-size: 1rem;
+  }
+  #dia4{
+    font-size: 1rem;
+  }
+  #dia5{
+    font-size: 1rem;
+  }
+
+
+  #icone1{
+    width: 30px;
+    height: 30px;
+  }
+  #icone2{
+    width: 30px;
+    height: 30px;
+  }
+
+  #icone3{
+    width: 30px;
+    height: 30px;
+  }
+  #icone4{
+    width: 30px;
+    height: 30px;
+  }
+  #icone5{
+    width: 30px;
+    height: 30px;
+  }
+  #estadoNuvens1{
+    display: none !important;
+  }
+  #estadoNuvens2{
+    display: none !important;
+  }
+  #estadoNuvens3{
+    display: none !important;
+  }
+  #estadoNuvens4{
+    display: none !important;
+  }
+  #estadoNuvens5{
+    display: none !important;
+  }
+
+
+
+
 }
 
 
