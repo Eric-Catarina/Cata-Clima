@@ -11,12 +11,12 @@ let jsonDaCidade
 let idPaginaAtual = 1
 
 jsonDaCidadeForecastURL = (`https://api.openweathermap.org/data/2.5/forecast?q=${nomeDaCidade}&units=${tipoDaTemperatura}&appid=6f0938ac962003085f29f2dd5cefc18d&lang=pt_br`)
-$.getJSON(jsonDaCidadeForecastURL, function(jsonDaCidade){
-       
+$.getJSON(jsonDaCidadeForecastURL, function (jsonDaCidade) {
+
     InsereIconeCincoDias(jsonDaCidade)
+    InsereNuvensCincoDias(jsonDaCidade)
 
 
-    
 })
 InsereNomeDaCidade()
 
@@ -53,84 +53,90 @@ function InsereDataCincoDias() {
 
     let diaDoMesAtual = dataAtual.getDate()
     let numeroMesAtual = dataAtual.getMonth()
-    
+
 
     let diaDaSemanaAtualNumero = dataAtual.getDay()
-    
+
     let mesAtual = months[numeroMesAtual]
 
-    for (let indiceDosProximosDias = 1; indiceDosProximosDias < 6; indiceDosProximosDias++){
-        
-        document.getElementById(`dia${indiceDosProximosDias}`).innerHTML = weekdays[(diaDaSemanaAtualNumero+indiceDosProximosDias)] + "," + " " + (diaDoMesAtual + indiceDosProximosDias) + " " + mesAtual
-        
+    for (let indiceDosProximosDias = 1; indiceDosProximosDias < 6; indiceDosProximosDias++) {
+
+        document.getElementById(`dia${indiceDosProximosDias}`).innerHTML = weekdays[(diaDaSemanaAtualNumero + indiceDosProximosDias)] + "," + " " + (diaDoMesAtual + indiceDosProximosDias) + " " + mesAtual
+
     }
 }
 InsereDataCincoDias()
 
-function InsereIconeCincoDias(jsonDaCidade){
-    for (let indiceDosProximosDias =1 ;indiceDosProximosDias <6; indiceDosProximosDias++){
-        idIconeAtual = jsonDaCidade.list[indiceDosProximosDias*7].weather[0].icon
+function InsereIconeCincoDias(jsonDaCidade) {
+    for (let indiceDosProximosDias = 1; indiceDosProximosDias < 6; indiceDosProximosDias++) {
+        idIconeAtual = jsonDaCidade.list[indiceDosProximosDias * 7].weather[0].icon
         document.getElementById(`icone${indiceDosProximosDias}`).src = `http://openweathermap.org/img/wn/${idIconeAtual}@2x.png`
-        console.log(jsonDaCidade.list[indiceDosProximosDias*7].weather[0].icon)
     }
+}
 
+function InsereNuvensCincoDias(jsonDaCidade) {
+
+    for (let indiceDosProximosDias = 1; indiceDosProximosDias < 6; indiceDosProximosDias++) {
+        estadoNuvensAtual = (idIconeAtual = jsonDaCidade.list[indiceDosProximosDias * 7].weather[0].description)
+        document.getElementById(`estadoNuvens${indiceDosProximosDias}`).innerHTML = estadoNuvensAtual
+    }
 
 }
 
 
-function InserePrevisaoCincoDias(){
-    
-    sessionStorage.setItem("sessionNomeDaCidade",nomeDaCidade);
+function InserePrevisaoCincoDias() {
+
+    sessionStorage.setItem("sessionNomeDaCidade", nomeDaCidade);
     window.location = ("./previsao5dias.html")
 
 
-    
 
-    
-   
+
+
+
 
 
 
 }
 
 
-function ToggleSeta(){
-   
+function ToggleSeta() {
+
     var elementoSeta = document.getElementById("seta");
     elementoSeta.classList.toggle("d-none")
 }
-function ToggleAutoComplete(){
+function ToggleAutoComplete() {
     var elementoAutoComplete = document.getElementById("autocomplete");
-    elementoAutoComplete.classList.toggle("d-none");  
+    elementoAutoComplete.classList.toggle("d-none");
 }
 
 
-function AlternaPaginas(){
+function AlternaPaginas() {
 
     var elementosAlternaveis = document.getElementsByClassName("alternavel")
 
-    for (const elementoAtual of elementosAlternaveis){
+    for (const elementoAtual of elementosAlternaveis) {
         elementoAtual.classList.toggle("d-none")
     }
 
     idPaginaAtual++
 }
-function InsereNomeDaCidade(){
+function InsereNomeDaCidade() {
     document.getElementById("nomeCidade").innerHTML = nomeDaCidade
 }
-function InsereTemperaturas(jsonDaCidade){
+function InsereTemperaturas(jsonDaCidade) {
     iconeID = jsonDaCidade.weather[0].icon
-    
+
     let estadoDasNuvens = document.getElementById("estadoNuvens")
     estadoDasNuvens.innerHTML = jsonDaCidade.weather[0].description
 
     jsonDaCidade = jsonDaCidade.main
-    let temperatura =  jsonDaCidade.temp
+    let temperatura = jsonDaCidade.temp
     let temperaturaArredondada = Math.round(temperatura)
 
-    document.getElementById("imagemIcone").src= `http://openweathermap.org/img/wn/${iconeID}@2x.png`
+    document.getElementById("imagemIcone").src = `http://openweathermap.org/img/wn/${iconeID}@2x.png`
     elementoDoIcone = document.getElementById("imagemIcone")
-    document.getElementById("temperatura").innerHTML = temperaturaArredondada + "°"  
+    document.getElementById("temperatura").innerHTML = temperaturaArredondada + "°"
     document.getElementById("temperatura").appendChild(elementoDoIcone)
 
 
@@ -144,67 +150,67 @@ function InsereTemperaturas(jsonDaCidade){
 }
 
 
-    
 
-function TrocaTipoTemperatura(){
-    
 
-    tipoDaTemperaturaCont +=1
-    if (tipoDaTemperaturaCont % 2 == 0){
-        tipoDaTemperatura= "metric"
+function TrocaTipoTemperatura() {
+
+
+    tipoDaTemperaturaCont += 1
+    if (tipoDaTemperaturaCont % 2 == 0) {
+        tipoDaTemperatura = "metric"
     }
-    else{
+    else {
         tipoDaTemperatura = "imperial"
     }
     jsonDaCidadeURL = (`https://api.openweathermap.org/data/2.5/weather?q=${nomeDaCidade}&units=${tipoDaTemperatura}&appid=6f0938ac962003085f29f2dd5cefc18d&lang=pt_br`)
-    
-    $.getJSON(jsonDaCidadeURL, function(jsonDaCidade){
+
+    $.getJSON(jsonDaCidadeURL, function (jsonDaCidade) {
         InsereTemperaturas(jsonDaCidade)
     })
-    
+
 }
 
 
 
-function handler(){
+function handler() {
     AlternaPaginas()
 
     dadosDoLugarClicado = autocomplete.getPlace()
     nomeDaCidade = dadosDoLugarClicado.address_components[0].long_name
     InsereNomeDaCidade()
-    
+
     jsonDaCidadeURL = (`https://api.openweathermap.org/data/2.5/weather?q=${nomeDaCidade}&units=${tipoDaTemperatura}&appid=6f0938ac962003085f29f2dd5cefc18d&lang=pt_br`)
-    
-    $.getJSON(jsonDaCidadeURL, function(jsonDaCidade){
+
+    $.getJSON(jsonDaCidadeURL, function (jsonDaCidade) {
         jsonDaCidadeGlobal = jsonDaCidade.main
         console.log(jsonDaCidade)
         InsereTemperaturas(jsonDaCidade)
     })
-    
+
 
 }
 
 
 
-function RecebeStringDoInputAutocomplete(){
+function RecebeStringDoInputAutocomplete() {
     nomeDoLugar = input.value
     return nomeDoLugar
 }
-function initMap(){
-  
+function initMap() {
+
     options = {
-            
-        types: [ "locality", "political" ],
-        componentRestrictions: {country: 'br'}
-     
+
+        types: ["locality", "political"],
+        componentRestrictions: { country: 'br' }
+
     };
 
-    autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete'),options)
+    autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete'), options)
 
     autocomplete.addListener('place_changed', handler)
-   
 
-    }
+
+}
 
 
 

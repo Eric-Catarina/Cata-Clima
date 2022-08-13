@@ -143,7 +143,6 @@ a {
 .degrade {
   width: 100px;
   height: 5px;
-  margin-top: 1.5rem ;
   border-radius: 0.3rem;
   background: #C6FFDD;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to left, #f7797d, #FBD786, #C6FFDD);  /* Chrome 10-25, Safari 5.1-6 */
