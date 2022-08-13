@@ -37,6 +37,7 @@ function InsereTemperaturas(jsonDaCidade){
     jsonDaCidade = jsonDaCidade.main
     let temperatura =  jsonDaCidade.temp
     let temperaturaArredondada = Math.round(temperatura)
+    document.getElementById("imagemIcone").src= `http://openweathermap.org/img/wn/${iconeID}@2x.png`
     elementoDoIcone = document.getElementById("imagemIcone")
     document.getElementById("temperatura").innerHTML = temperaturaArredondada + "°"  
     document.getElementById("temperatura").appendChild(elementoDoIcone)
@@ -51,7 +52,7 @@ function InsereTemperaturas(jsonDaCidade){
     document.getElementById("max").innerHTML = temperaturaMaximaArredondada + "°"
 
     
-
+    console.log(iconeID)
 }
 
 function TrocaTipoTemperatura(){
