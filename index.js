@@ -43,17 +43,23 @@ function myDate() {
     months[10] = "Nov";
     months[11] = "Dez";
 
-    let mesAtual = months[dataAtual.getMonth()]
-    var diaDaSemana = weekdays[dataAtual.getDay()];
-    let diaDoMes = dataAtual.getDate()
+    let diaDoMesAtual = dataAtual.getDate()
+    let numeroMesAtual = dataAtual.getMonth()
+    
+    parseInt(diaDoMesAtual,10)
 
-    let diaDaSemanaEDiaDoMes = diaDaSemana + "," + " " + diaDoMes + " " + mesAtual;
-    console.log(diaDaSemanaEDiaDoMes)
+    let diaDaSemanaAtualNumero = dataAtual.getDay()
+    
+    let mesAtual = months[numeroMesAtual]
 
-    let proximosCincoDias = []
-    for(let indiceDiaAtual = diaDoMes + 1; indiceDiaAtual<indiceDiaAtual+6; indiceDiaAtual++){
-        proximosCincoDias.push(indiceDiaAtual)
+    for (let indiceDosProximosDias = 1; indiceDosProximosDias < 6; indiceDosProximosDias++){
+        document.getElementById(`dia${indiceDosProximosDias}`).innerHTML = weekdays[6] + "," + " " + (diaDoMesAtual + indiceDosProximosDias) + " " + mesAtual
+        
+
     }
+    
+   
+
 }
 myDate()
 function InserePrevisaoCincoDias(){
