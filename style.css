@@ -162,9 +162,14 @@ img{
   .tempoHojeTitulo{
     font-size: 2rem;
     white-space: normal !important;
-
+  }
+  .nomeCidade{
+    font-size: 2rem;
   }
 
+  .linkPrevisao{
+    font-size: 1.2rem;
+  }
 }
 
 
