@@ -7,10 +7,14 @@ let jsonDaCidadeURL
 let nomeDaCidade = sessionStorage.getItem("sessionNomeDaCidade");
 let tipoDaTemperatura = "metric"
 let tipoDaTemperaturaCont = 0
-let jsonDaCidadeGlobal
 let jsonDaCidade
 let idPaginaAtual = 1
 
+var watchID = navigator.geolocation.watchPosition(function(position) {
+    do_something(position.coords.latitude, position.coords.longitude);
+  }
+  );
+  
 jsonDaCidadeForecastURL = (`https://api.openweathermap.org/data/2.5/forecast?q=${nomeDaCidade}&units=${tipoDaTemperatura}&appid=6f0938ac962003085f29f2dd5cefc18d&lang=pt_br`)
 $.getJSON(jsonDaCidadeForecastURL, function (jsonDaCidade) {
 
@@ -95,12 +99,8 @@ function InsereMaxEMinCincoDias(jsonDaCidade){
         document.getElementById(`tempMin${indiceDosProximosDias}`).innerHTML = tempMinAtualArrendondada + "°"
         document.getElementById(`tempMax${indiceDosProximosDias}`).innerHTML = tempMaxAtualArrendondada + "°"
 
-
-
     }
 }
-
-
 
 function InserePrevisaoCincoDias() {
 
@@ -108,7 +108,6 @@ function InserePrevisaoCincoDias() {
     window.location = ("./previsao5dias.html")
 
 }
-
 
 function ToggleSeta() {
 
@@ -119,7 +118,6 @@ function ToggleAutoComplete() {
     var elementoAutoComplete = document.getElementById("autocomplete");
     elementoAutoComplete.classList.toggle("d-none");
 }
-
 
 function AlternaPaginas() {
 
@@ -159,11 +157,7 @@ function InsereTemperaturas(jsonDaCidade) {
     document.getElementById("max").innerHTML = temperaturaMaximaArredondada + "°"
 }
 
-
-
-
 function TrocaTipoTemperatura() {
-
 
     tipoDaTemperaturaCont += 1
     if (tipoDaTemperaturaCont % 2 == 0) {
@@ -180,8 +174,6 @@ function TrocaTipoTemperatura() {
 
 }
 
-
-
 function handler() {
     AlternaPaginas()
 
@@ -192,15 +184,11 @@ function handler() {
     jsonDaCidadeURL = (`https://api.openweathermap.org/data/2.5/weather?q=${nomeDaCidade}&units=${tipoDaTemperatura}&appid=6f0938ac962003085f29f2dd5cefc18d&lang=pt_br`)
 
     $.getJSON(jsonDaCidadeURL, function (jsonDaCidade) {
-        jsonDaCidadeGlobal = jsonDaCidade.main
         console.log(jsonDaCidade)
         InsereTemperaturas(jsonDaCidade)
     })
 
-
 }
-
-
 
 function RecebeStringDoInputAutocomplete() {
     nomeDoLugar = input.value
@@ -216,10 +204,7 @@ function initMap() {
     };
 
     autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete'), options)
-
     autocomplete.addListener('place_changed', handler)
-
-
 }
 
 
