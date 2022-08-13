@@ -1,3 +1,4 @@
+
 let autocomplete;
 let nomeDoLugar;
 let input = document.getElementById('autocomplete')
@@ -222,6 +223,3 @@ function initMap() {
 }
 
 
-
-
-//console.log(RecebeStringDoInputAutocomplete())

@@ -7919,7 +7919,7 @@ textarea.form-control-lg {
 }
 
 .fw-bold {
-  font-weight: 700 !important;
+  font-weight: 900 !important;
 }
 
 .fw-semibold {
@@ -7987,7 +7987,7 @@ textarea.form-control-lg {
 }
 
 .text-nowrap {
-  white-space: nowrap !important;
+  white-space: nowrap ;
 }
 
 /* rtl:begin:remove */

@@ -19,7 +19,8 @@ body {
   background-color: rgba(241, 251, 255, 0.8);
   height: 50px;
   border-bottom: 1px solid rgba(210, 179, 193, 0.9);
-  font-size: 1.5vw;
+  font-size: 1.6rem;
+
 }
 
 .pac-container:after {
@@ -154,6 +155,20 @@ img{
   width: 60px;
   height: 60px;
 }
+
+
+
+@media only screen and (max-width: 580px) {
+  .tempoHojeTitulo{
+    font-size: 2rem;
+    white-space: normal !important;
+
+  }
+
+}
+
+
+
 
 
 
